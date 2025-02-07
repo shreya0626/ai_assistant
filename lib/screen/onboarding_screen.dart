@@ -1,6 +1,10 @@
+import 'package:ai_assistant/main.dart';
 import 'package:ai_assistant/model/onboard.dart';
 import 'package:ai_assistant/screen/home_screen.dart';
+import 'package:ai_assistant/widget/custom_btn.dart';
+import 'package:ai_assistant/widget/message_card.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
 import '../helper/global.dart';
@@ -64,10 +68,10 @@ class OnboardingScreen extends StatelessWidget {
                 child: Text(
                   list[ind].subtitle,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 13.5,
                     letterSpacing: .5,
-                    color: Colors.black54,
+                    color: Theme.of(context).lightTextColor,
                   ),
                 ),
               ),
@@ -91,30 +95,20 @@ class OnboardingScreen extends StatelessWidget {
               const Spacer(),
 
               // Button
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
-                  foregroundColor: Colors.white,
-                  shape: const StadiumBorder(),
-                  elevation: 0,
-                  textStyle: const TextStyle(
-                
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  minimumSize: Size(mq.width * .4, 50),
-                ),
-                onPressed: () {
+              CustomBtn(onTap: () {
                   if(isLast){
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
+                    Get.off(() => const HomeScreen());
+                   /*  Navigator.of(context).pushReplacement(MaterialPageRoute(
                       builder: (_) => const HomeScreen()));
-
-                  }else{
-                    c.nextPage(duration: const Duration(milliseconds: 600), curve: Curves.ease);
+ */
+                  } else {
+                    c.nextPage(
+                        duration: const Duration(milliseconds: 600), 
+                        curve: Curves.ease);
                   }
-                },
-                child: Text(isLast ? 'Finish' : 'Next'),
-              ),
+                
+              }, text: isLast ? 'Finish' : 'Next'),
+              
               const Spacer(flex: 2),
             ],
           );

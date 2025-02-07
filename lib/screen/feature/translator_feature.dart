@@ -1,4 +1,4 @@
-/* import 'package:flutter/cupertino.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -126,4 +126,4 @@ class _TranslatorFeatureState extends State<TranslatorFeature> {
           ),
         Status.loading => const Align(child: CustomLoading())
       };
-} */
+}

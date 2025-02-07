@@ -1,13 +1,20 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.shreya.ai_assistant">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
+     <!-- For Storage Access -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
     <application
         android:label="Ai Assistant"
+        android:name="${applicationName}"
+        android:requestLegacyExternalStorage="true"
         android:icon="@mipmap/ic_launcher">
+        
 
         <activity
-            android:name="com.example.ai_assistant.MainActivity"
+            android:name="com.shreya.ai_assistant.MainActivity"
             android:exported="true"
             android:launchMode="singleTop"
             android:taskAffinity=""

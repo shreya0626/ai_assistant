@@ -1,4 +1,4 @@
-/* import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../widget/custom_loading.dart';
@@ -27,4 +27,4 @@ class MyDialog {
   static void showLoadingDialog() {
     Get.dialog(const Center(child: CustomLoading()));
   }
-} */
+}

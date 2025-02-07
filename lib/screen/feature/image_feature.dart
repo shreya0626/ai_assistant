@@ -1,11 +1,11 @@
-/* import 'package:cached_network_image/cached_network_image.dart';
+import 'package:ai_assistant/controller/image_controller.dart';
+import 'package:ai_assistant/widget/custom_btn.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
-import '../../controller/image_controller.dart';
 import '../../helper/global.dart';
-import '../../widget/custom_btn.dart';
 import '../../widget/custom_loading.dart';
 
 class ImageFeature extends StatefulWidget {
@@ -21,24 +21,20 @@ class _ImageFeatureState extends State<ImageFeature> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //app bar
+      // App bar
       appBar: AppBar(
         title: const Text('AI Image Creator'),
-
-        //share btn
+        // Share button
         actions: [
-          Obx(
-            () => _c.status.value == Status.complete
-                ? IconButton(
-                    padding: const EdgeInsets.only(right: 6),
-                    onPressed: _c.shareImage,
-                    icon: const Icon(Icons.share))
-                : const SizedBox(),
-          )
+          Obx(() => _c.status.value == Status.complete
+              ? IconButton(
+                  padding: const EdgeInsets.only(right: 6),
+                  onPressed: _c.shareImage,
+                  icon: const Icon(Icons.share))
+              : const SizedBox()),
         ],
       ),
-
-      //download btn
+      // Floating Action Button for Download
       floatingActionButton: Obx(() => _c.status.value == Status.complete
           ? Padding(
               padding: const EdgeInsets.only(right: 6, bottom: 6),
@@ -50,8 +46,7 @@ class _ImageFeatureState extends State<ImageFeature> {
               ),
             )
           : const SizedBox()),
-
-      //body
+      // Body
       body: ListView(
         physics: const BouncingScrollPhysics(),
         padding: EdgeInsets.only(
@@ -60,7 +55,7 @@ class _ImageFeatureState extends State<ImageFeature> {
             left: mq.width * .04,
             right: mq.width * .04),
         children: [
-          //text field
+          // Text Field for Prompt
           TextFormField(
             controller: _c.textC,
             textAlign: TextAlign.center,
@@ -68,20 +63,19 @@ class _ImageFeatureState extends State<ImageFeature> {
             maxLines: null,
             onTapOutside: (e) => FocusScope.of(context).unfocus(),
             decoration: const InputDecoration(
-                hintText:
-                    'Imagine something wonderful & innovative\nType here & I will create for you 😃',
-                hintStyle: TextStyle(fontSize: 13.5),
+                hintText: 'Imagine something wonderful & innovative \n Type here & I will create for you😃',
+                hintStyle: TextStyle(fontSize: 14),
                 border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10)))),
+                    borderRadius: BorderRadius.all(Radius.circular(30)))),
           ),
-
-          //ai image
+          // Displaying Generated AI Image
           Container(
-              height: mq.height * .5,
-              margin: EdgeInsets.symmetric(vertical: mq.height * .015),
-              alignment: Alignment.center,
-              child: Obx(() => _aiImage())),
-
+            height: mq.height * .5,
+            margin: EdgeInsets.symmetric(vertical: mq.height * .015),
+            alignment: Alignment.center,
+            child: Obx(() => _aiImage()),
+          ),
+          // Display generated images in a horizontal scroll view
           Obx(() => _c.imageList.isEmpty
               ? const SizedBox()
               : SingleChildScrollView(
@@ -96,8 +90,7 @@ class _ImageFeatureState extends State<ImageFeature> {
                                 _c.url.value = e;
                               },
                               child: ClipRRect(
-                                borderRadius:
-                                    const BorderRadius.all(Radius.circular(8)),
+                                borderRadius: const BorderRadius.all(Radius.circular(10)),
                                 child: CachedNetworkImage(
                                   imageUrl: e,
                                   height: 100,
@@ -109,26 +102,25 @@ class _ImageFeatureState extends State<ImageFeature> {
                         .toList(),
                   ),
                 )),
-
-          //create btn
-          // CustomBtn(onTap: _c.createAIImage, text: 'Create'),
+          // Create Button to Generate AI Image
           CustomBtn(onTap: _c.searchAiImage, text: 'Create'),
         ],
       ),
     );
   }
 
+  // Display AI Image with loading and error handling
   Widget _aiImage() => ClipRRect(
         borderRadius: const BorderRadius.all(Radius.circular(10)),
         child: switch (_c.status.value) {
-          Status.none =>
-            Lottie.asset('assets/lottie/ai_play.json', height: mq.height * .3),
+          Status.none => Lottie.asset('assets/lottie/ai_play.json',
+              height: mq.height * .3),
           Status.complete => CachedNetworkImage(
-              imageUrl: _c.url.value,
-              placeholder: (context, url) => const CustomLoading(),
-              errorWidget: (context, url, error) => const SizedBox(),
-            ),
+                imageUrl: _c.url.value,
+                placeholder: (context, url) => const CustomLoading(),
+                errorWidget: (context, url, error) => const SizedBox(),
+              ),
           Status.loading => const CustomLoading()
         },
       );
-} */
+}

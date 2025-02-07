@@ -1,4 +1,4 @@
-package com.example.ai_assistant
+package com.shreya.ai_assistant
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -1,9 +1,9 @@
-/* import 'dart:developer';
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:dart_openai/dart_openai.dart';
 import 'package:flutter/material.dart';
-import 'package:gallery_saver_updated/gallery_saver.dart';
+import 'package:gallery_saver_plus/gallery_saver.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart';
 import 'package:path_provider/path_provider.dart';
@@ -90,7 +90,7 @@ class ImageController extends GetxController {
 
       await Share.shareXFiles([XFile(file.path)],
           text:
-              'Check out this Amazing Image created by Ai Assistant App by Harsh H. Rajpurohit');
+              'Check out this Amazing Image created by Ai Assistant App');
     } catch (e) {
       //hide loading
       Get.back();
@@ -119,4 +119,4 @@ class ImageController extends GetxController {
       MyDialog.info('Provide some beautiful image description!');
     }
   }
-} */
+}

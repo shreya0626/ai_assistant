@@ -1,3 +1,6 @@
+import 'dart:developer';
+
+import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:hive/hive.dart';
 
@@ -31,7 +34,7 @@ class Pref {
   // }
 
   //for storing theme data
- /*  static bool get isDarkMode => _box.get('isDarkMode') ?? false;
+  static bool get isDarkMode => _box.get('isDarkMode') ?? false;
   static set isDarkMode(bool v) => _box.put('isDarkMode', v);
 
   static ThemeMode get defaultTheme {
@@ -40,5 +43,5 @@ class Pref {
     if (data == null) return ThemeMode.system;
     if (data == true) return ThemeMode.dark;
     return ThemeMode.light;
-  } */
+  }
 }
