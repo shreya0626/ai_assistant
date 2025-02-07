@@ -2,29 +2,25 @@
 
 ## Status: 🚀 Flutter | Dart | Firebase | OpenAI | Google Gemini
 
-### ⭐ Note: This project includes AI Chatbot, Image Generator, and Language Translator features using OpenAI and Google Gemini. Some features may require active API keys or services.
+### ⭐ Note: This project includes AI Chatbot, Image Generator, and Language Translator features using Google Gemini. Some features may require active API keys or services.
 
 ---
 
 ## 📱 AI Chatbot, Image Generator & Language Translator App
 A powerful mobile application built with Flutter that integrates AI chatbots, image generation, and language translation capabilities.
 
----
-
-## 📦 APKs:
-### 🌍 Global APK:
-**[Download Global APK](#)**  
-(Supports all devices)
-
-### 📲 ARM APK:
-**[Download ARM APK](#)**  
-(Supports ARM v7 and v8 devices)
-
----
 
 ## 📸 Screenshots:
 🔹 The actual app looks even better! 😃
-![Screenshot 2025-01-04 122959](https://github.com/user-attachments/assets/9f9ec916-12fb-4c48-9eff-3cbadd57c14c)
+![Screenshot 2025-01-04 122959](https://github.com/user-attachments/assets/afece311-6880-4607-b734-968a2b7d7c04)
+![Screenshot 2025-01-04 123025](https://github.com/user-attachments/assets/0816a664-2677-4a91-9c56-c256b3ba0b1f)
+![Screenshot 2025-01-04 123037](https://github.com/user-attachments/assets/44e67606-4593-456a-ade0-f4a71a3b5921)
+![Screenshot 2025-01-04 123149](https://github.com/user-attachments/assets/4f145990-e9b9-4012-99ab-6a32b22f327c)
+![Screenshot 2025-01-04 123229](https://github.com/user-attachments/assets/d6aa3237-395a-48b1-820e-ee6fade2d8ad)
+![Screenshot 2025-01-04 123309](https://github.com/user-attachments/assets/6a2195f5-1718-4972-b16e-1432eecad2d8)
+![Screenshot 2025-01-04 123319](https://github.com/user-attachments/assets/5f794bdf-b49b-4a97-a1a9-aaaefd6a7112)
+![Screenshot 2025-01-04 123332](https://github.com/user-attachments/assets/b705496f-4b30-4892-980a-ddc6272ed079)
+![Screenshot 2025-01-04 123344](https://github.com/user-attachments/assets/321f4397-4c42-4400-85cf-ada6365f8c6e)
 
 ---
 
@@ -48,8 +44,7 @@ A powerful mobile application built with Flutter that integrates AI chatbots, im
 - **Frontend:** Flutter (Dart)  
 - **Backend:** Firebase (Authentication & Database)  
 - **AI Services:** OpenAI API, Google Gemini AI, Google Translator API  
-- **Cloud Integration:** Firebase Storage, Firestore  
-- **Advertising:** Facebook Ads SDK  
+- **Cloud Integration:** AppWrite  
 
 ---
 
