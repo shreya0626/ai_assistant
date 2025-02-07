@@ -10,14 +10,14 @@ class AppWrite {
 
   static void init() {
     //Client _client = Client();
-    _client.setProject('675d8e2d0007774d152c');
+    _client.setProject('your id');
     getApiKey();
   }
 
   static Future<String> getApiKey() async {
     try {
       final d = await _database.getDocument(
-          databaseId: '675d9190001c715a9b17',
+          databaseId: 'your id',
           collectionId: 'ApiKey',
           documentId: 'GeminiApiKey');
 
